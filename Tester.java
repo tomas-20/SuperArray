@@ -6,9 +6,9 @@ public class Tester {
     }
     System.out.println("Your list:");
     System.out.println(bob.toString());
-    System.out.println("It's size:");
+    System.out.println("Its size:");
     System.out.println(bob.size());
-    System.out.println("It's emptiness:");
+    System.out.println("Its emptiness:");
     System.out.println(bob.isEmpty());
     System.out.println("If it has 'test':");
     System.out.println(bob.contains("test"));
