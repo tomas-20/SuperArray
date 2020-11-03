@@ -2,9 +2,18 @@ import java.util.Arrays;
 public class SuperArray {
   private String[] data;
   private int size;
-  public SuperArray() {
-    data = new String[10];
+  private int capacity;
+  private void newArray() {
+    data = new String[capacity];
     size = 0;
+  }
+  public SuperArray(int n) {
+    capacity = n;
+    newArray();
+  }
+  public SuperArray() {
+    capacity = 10;
+    newArray();
   }
   public int size() {
     return size;
@@ -52,7 +61,6 @@ public class SuperArray {
     return false;
   }
   public void clear() {
-    data = new String[10];
-    size = 0;
+    newArray();
   }
 }
