@@ -4,11 +4,18 @@ public class Tester {
     for (int i = 0; i < args.length; i ++) {
       bob.add(args[i]);
     }
+    System.out.println("Your list:");
     System.out.println(bob.toString());
+    System.out.println("It's size:");
     System.out.println(bob.size());
-    System.out.println(bob.get(2));
-    System.out.println("is the same as");
+    System.out.println("It's emptiness:");
+    System.out.println(bob.isEmpty());
+    System.out.println("If it has 'test':");
+    System.out.println(bob.contains("test"));
+    System.out.print(bob.get(2));
+    System.out.print(" is the same as ");
     System.out.println(bob.set(2, "test"));
+    System.out.println("New list:");
     System.out.println(bob.toString());
   }
 }

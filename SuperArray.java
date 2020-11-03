@@ -40,4 +40,15 @@ public class SuperArray {
     }
     return Arrays.toString(newList);
   }
+  public boolean isEmpty() {
+    return size == 0;
+  }
+  public boolean contains(String s) {
+    for (int i = 0; i < size; i ++) {
+      if (data[i].equals(s)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
