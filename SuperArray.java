@@ -51,4 +51,8 @@ public class SuperArray {
     }
     return false;
   }
+  public void clear() {
+    data = new String[10];
+    size = 0;
+  }
 }
