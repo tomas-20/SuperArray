@@ -17,6 +17,9 @@ public class Tester {
     System.out.println(bob.set(2, "test"));
     System.out.println("New list:");
     System.out.println(bob.toString());
+    bob.add(2, "test2");
+    System.out.println("New list:");
+    System.out.println(bob.toString());
     bob.clear();
     System.out.println("List after being cleared:");
     System.out.println(bob.toString());

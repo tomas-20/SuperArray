@@ -63,4 +63,12 @@ public class SuperArray {
   public void clear() {
     newArray();
   }
+  public void add(int index, String element) {
+    if (index >= size) {
+      add(element);
+    }
+    else {
+      add(index + 1, set(index, element));
+    }
+  }
 }
