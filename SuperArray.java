@@ -71,4 +71,14 @@ public class SuperArray {
       add(index + 1, set(index, element));
     }
   }
+  public void remove(int index) {
+    if (index >= size) {
+      size --;
+      data[size] = null;
+    }
+    else {
+      set(index, data[index + 1]);
+      remove(index + 1);
+    }
+  }
 }
