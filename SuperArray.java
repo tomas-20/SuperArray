@@ -42,12 +42,15 @@ public class SuperArray {
     }
     data = nuevo;
   }
-  public String toString() {
+  public String[] toArray() {
     String[] newList = new String[size];
     for (int i = 0; i < size; i ++) {
       newList[i] = data[i];
     }
-    return Arrays.toString(newList);
+    return newList;
+  }
+  public String toString() {
+    return Arrays.toString(toArray());
   }
   public boolean isEmpty() {
     return size == 0;
