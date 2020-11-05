@@ -20,8 +20,9 @@ public class Tester {
     bob.add(2, "test2");
     System.out.println("New list:");
     System.out.println(bob.toString());
-    bob.remove(3);
-    System.out.println("Now the old test should be gone:");
+    System.out.print("Now the ");
+    System.out.print(bob.remove(3));
+    System.out.println(" should be gone");
     System.out.println(bob.toString());
     bob.clear();
     System.out.println("List after being cleared:");

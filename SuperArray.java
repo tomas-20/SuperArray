@@ -71,7 +71,8 @@ public class SuperArray {
       add(index + 1, set(index, element));
     }
   }
-  public void remove(int index) {
+  public String remove(int index) {
+    String output = data[index];
     if (index >= size) {
       size --;
       data[size] = null;
@@ -80,5 +81,6 @@ public class SuperArray {
       set(index, data[index + 1]);
       remove(index + 1);
     }
+    return output;
   }
 }
