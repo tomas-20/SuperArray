@@ -55,13 +55,16 @@ public class SuperArray {
   public boolean isEmpty() {
     return size == 0;
   }
-  public boolean contains(String s) {
+  public int indexOf(String s) {
     for (int i = 0; i < size; i ++) {
       if (data[i].equals(s)) {
-        return true;
+        return i;
       }
     }
-    return false;
+    return -1;
+  }
+  public boolean contains(String s) {
+    return indexOf(s) != -1;
   }
   public void clear() {
     newArray();
