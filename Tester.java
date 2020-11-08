@@ -1,9 +1,13 @@
 public class Tester {
-  public static void main(String[] args) {
-    SuperArray bob = new SuperArray();
-    for (int i = 0; i < args.length; i ++) {
-      bob.add(args[i]);
+  public static SuperArray toSuperArray(String[] array) {
+    SuperArray output = new SuperArray();
+    for (int i = 0; i < array.length; i ++) {
+      output.add(array[i]);
     }
+    return output;
+  }
+  public static void main(String[] args) {
+    SuperArray bob = toSuperArray(args);
     System.out.println("Your list:");
     System.out.println(bob.toString());
     System.out.println("Its size:");
@@ -16,6 +20,9 @@ public class Tester {
     System.out.println(bob.indexOf("test"));
     System.out.println("Where it has the last 'test':");
     System.out.println(bob.lastIndexOf("test"));
+    SuperArray joe = toSuperArray(new String[] {"the", "moon", "is", "made", "of", "cheese"});
+    System.out.println("If the moon is made of cheese:");
+    System.out.println(bob.equals(joe));
     System.out.print(bob.get(2));
     System.out.print(" is the same as ");
     System.out.println(bob.set(2, "test"));

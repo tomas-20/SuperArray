@@ -52,6 +52,9 @@ public class SuperArray {
   public String toString() {
     return Arrays.toString(toArray());
   }
+  public boolean equals(SuperArray other) {
+    return Arrays.equals(toArray(), other.toArray());
+  }
   public boolean isEmpty() {
     return size == 0;
   }
