@@ -36,7 +36,7 @@ public class SuperArray {
   }
   private void resize() {
     int length = data.length;
-    String[] nuevo = new String[length + 10];
+    String[] nuevo = new String[length * 2];
     for (int i = 0; i < length; i ++) {
       nuevo[i] = data[i];
     }

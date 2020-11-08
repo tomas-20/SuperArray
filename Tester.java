@@ -33,7 +33,7 @@ public class Tester {
     System.out.println(bob.toString());
     System.out.print("Now the ");
     System.out.print(bob.remove(3));
-    System.out.println(" should be gone");
+    System.out.println(" should be gone:");
     System.out.println(bob.toString());
     bob.clear();
     System.out.println("List after being cleared:");
