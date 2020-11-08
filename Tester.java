@@ -12,8 +12,10 @@ public class Tester {
     System.out.println(bob.isEmpty());
     System.out.println("If it has 'test':");
     System.out.println(bob.contains("test"));
-    System.out.println("Where it has 'test':");
+    System.out.println("Where it has the first 'test':");
     System.out.println(bob.indexOf("test"));
+    System.out.println("Where it has the last 'test':");
+    System.out.println(bob.lastIndexOf("test"));
     System.out.print(bob.get(2));
     System.out.print(" is the same as ");
     System.out.println(bob.set(2, "test"));

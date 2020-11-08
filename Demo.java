@@ -1,4 +1,4 @@
-public class Demo{
+public class Demo {
   public static void removeDuplicates(SuperArray s) {
     for (int i = s.size() - 1; i >= 0; i --) {
       if (s.indexOf(s.get(i)) != i) {
@@ -16,7 +16,7 @@ public class Demo{
     }
     return output;
   }
-  public static void main(String[]args){
+  public static void main(String[]args) {
     SuperArray words = new SuperArray();
     //grouped to save vertical space
     words.add("kani");   words.add("uni");     words.add("ebi");     words.add("una");
