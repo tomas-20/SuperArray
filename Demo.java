@@ -16,26 +16,27 @@ public class Demo {
     }
     return output;
   }
-  public static SuperArray orderedZip(SuperArray a, int aSize, SuperArray b, int bSize) {
-    SuperArray output = new SuperArray(aSize + bSize);
-    for (int i = 0; i < aSize; i ++) {
-      output.add(a.get(i));
-      output.add(b.get(i));
+  public static SuperArray coolZip(SuperArray[] arr) {
+    int length = arr.length;
+    int[] sizeList = new int[length];
+    int sum = 0;
+    for (int i = 0; i < length; i ++) {
+      int size = arr[i].size();
+      sizeList[i] = size;
+      sum += size;
     }
-    for (int i = aSize; i < bSize; i ++) {
-      output.add(b.get(i));
+    SuperArray output = new SuperArray(sum);
+    for (int i = 0; output.size() < sum; i ++) {
+      for (int j = 0; j < length; j ++) {
+        if (i < sizeList[j]) {
+          output.add(arr[j].get(i));
+        }
+      }
     }
     return output;
   }
   public static SuperArray zip(SuperArray a, SuperArray b) {
-    int aSize = a.size();
-    int bSize = b.size();
-    if (aSize < bSize) {
-      return orderedZip(a, aSize, b, bSize);
-    }
-    else {
-      return orderedZip(b, bSize, a, aSize);
-    }
+    return coolZip(new SuperArray[] {a, b});
   }
   public static void main(String[] args) {
     SuperArray words = new SuperArray();
