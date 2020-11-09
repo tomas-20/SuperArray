@@ -16,7 +16,28 @@ public class Demo {
     }
     return output;
   }
-  public static void main(String[]args) {
+  public static SuperArray orderedZip(SuperArray a, int aSize, SuperArray b, int bSize) {
+    SuperArray output = new SuperArray(aSize + bSize);
+    for (int i = 0; i < aSize; i ++) {
+      output.add(a.get(i));
+      output.add(b.get(i));
+    }
+    for (int i = aSize; i < bSize; i ++) {
+      output.add(b.get(i));
+    }
+    return output;
+  }
+  public static SuperArray zip(SuperArray a, SuperArray b) {
+    int aSize = a.size();
+    int bSize = b.size();
+    if (aSize < bSize) {
+      return orderedZip(a, aSize, b, bSize);
+    }
+    else {
+      return orderedZip(b, bSize, a, aSize);
+    }
+  }
+  public static void main(String[] args) {
     SuperArray words = new SuperArray();
     //grouped to save vertical space
     words.add("kani");   words.add("uni");     words.add("ebi");     words.add("una");
@@ -29,6 +50,9 @@ public class Demo {
 
     SuperArray words2 = new SuperArray();
     words2.add("uni");   words2.add("bob");     words2.add("ebi");
+
+    System.out.println(words2);
     System.out.println(findOverlap(words, words2));
+    System.out.println(zip(words, words2));
   }
 }
