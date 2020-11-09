@@ -8,6 +8,9 @@ public class SuperArray {
     size = 0;
   }
   public SuperArray(int n) {
+    if (n <= 0) {
+      throw new IllegalArgumentException("initial capacity " + Integer.toString(n) + " is not greater than 0");
+    }
     capacity = n;
     newArray();
   }
@@ -18,6 +21,14 @@ public class SuperArray {
   public int size() {
     return size;
   }
+  private void check(int n, boolean type) {
+    if (n < 0 || n > size || (n == size && type)) {
+      throw new IndexOutOfBoundsException("index " + Integer.toString(n) + " is not in range");
+    }
+  }
+  private void normalCheck(int n) {
+    check(n, true);
+  }
   public boolean add(String element) {
     if (size == data.length) {
       resize();
@@ -27,9 +38,11 @@ public class SuperArray {
     return true;
   }
   public String get(int index) {
+    normalCheck(index);
     return data[index];
   }
   public String set(int index, String element) {
+    normalCheck(index);
     String output = data[index];
     data[index] = element;
     return output;
@@ -81,7 +94,8 @@ public class SuperArray {
     newArray();
   }
   public void add(int index, String element) {
-    if (index >= size) {
+    check(index, false);
+    if (index == size) {
       add(element);
     }
     else {
@@ -89,8 +103,9 @@ public class SuperArray {
     }
   }
   public String remove(int index) {
+    normalCheck(index);
     String output = data[index];
-    if (index >= size) {
+    if (index == size - 1) {
       size --;
       data[size] = null;
     }
